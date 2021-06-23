@@ -22,30 +22,37 @@ public class Alarm {
     }
 
     public String getNotificationIdentifier() {
+
         return NotificationIdentifier;
     }
 
     public void setNotificationIdentifier(String notificationIdentifier) {
+
         NotificationIdentifier = notificationIdentifier;
     }
 
     public PerceivedSeverity getSeverity() {
+
         return Severity;
     }
 
     public void setSeverity(PerceivedSeverity severity) {
+
         Severity = severity;
     }
 
     public LocalDate getEventTime() {
+
         return EventTime;
     }
 
     public void setEventTime(LocalDate eventTime) {
+
         EventTime = eventTime;
     }
 
     public String getProbableCause() {
+
         return ProbableCause;
     }
 
@@ -54,10 +61,12 @@ public class Alarm {
     }
 
     public String getAdditionalText() {
+
         return AdditionalText;
     }
 
     public void setAdditionalText(String additionalText) {
+
         AdditionalText = additionalText;
     }
 
