@@ -1,19 +1,19 @@
 package org.med.alarm;
 
-import java.time.LocalDate;
+import java.util.Date;
 
 public class Alarm {
 
     private String NotificationIdentifier;
     private PerceivedSeverity Severity;
-    private LocalDate EventTime;
+    private Date EventTime;
     private String ProbableCause;
     private String AdditionalText;
 
     public Alarm() {
     }
 
-    public Alarm(String notificationIdentifier, PerceivedSeverity severity, LocalDate eventTime, String probableCause, String additionalText) {
+    public Alarm(String notificationIdentifier, PerceivedSeverity severity, Date eventTime, String probableCause, String additionalText) {
         NotificationIdentifier = notificationIdentifier;
         Severity = severity;
         EventTime = eventTime;
@@ -26,11 +26,6 @@ public class Alarm {
         return NotificationIdentifier;
     }
 
-    public void setNotificationIdentifier(String notificationIdentifier) {
-
-        NotificationIdentifier = notificationIdentifier;
-    }
-
     public PerceivedSeverity getSeverity() {
 
         return Severity;
@@ -41,14 +36,9 @@ public class Alarm {
         Severity = severity;
     }
 
-    public LocalDate getEventTime() {
+    public Date getEventTime() {
 
         return EventTime;
-    }
-
-    public void setEventTime(LocalDate eventTime) {
-
-        EventTime = eventTime;
     }
 
     public String getProbableCause() {
