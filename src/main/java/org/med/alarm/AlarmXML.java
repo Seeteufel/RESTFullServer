@@ -1,32 +1,25 @@
 package org.med.alarm;
 
-import java.io.File;
-import java.util.List;
-
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
+import java.io.File;
 
 public class AlarmXML {
 
-    public static void writer(String fileName, List<Alarm> alarms) {
+    public static void writer(String fileName, Object obj) {
 
         try {
 
-            JAXBContext jaxbContext = JAXBContext.newInstance(Alarm.class);
+            JAXBContext jaxbContext = JAXBContext.newInstance(Alarms.class);
             Marshaller jaxbMarshaller = jaxbContext.createMarshaller();
 
             jaxbMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
 
-            jaxbMarshaller.marshal(alarms, new File(fileName));
+            jaxbMarshaller.marshal(obj, new File(fileName));
         }
         catch (JAXBException e) {
             e.printStackTrace();
         }
-    }
-
-    public static List<Alarm> reader(String fileName) {
-
-        return null;
     }
 }

@@ -7,7 +7,7 @@ import jakarta.ws.rs.PathParam;
 import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.MediaType;
 import org.med.alarm.Alarm;
-import org.med.alarm.AlarmGenerator;
+import org.med.alarm.AlarmRepository;
 
 import java.util.List;
 
@@ -16,6 +16,7 @@ import java.util.List;
 
 public class AlarmsResource {
 
+    private AlarmRepository alarms = new AlarmRepository();
 
     @GET
     @Path("/hello")
@@ -24,13 +25,11 @@ public class AlarmsResource {
         return "Hello from Alarms Resource";
     }
 
-
     @GET
-    @Path("/getAllAlarms")
     @Produces(MediaType.APPLICATION_JSON)
     public List<Alarm> getAllAlarms() {
-        AlarmGenerator alarmGenerator = new AlarmGenerator();
-        return alarmGenerator.createListOfAlarms(20);
+
+        return alarms.getAllAlarms();
     }
 
     @GET

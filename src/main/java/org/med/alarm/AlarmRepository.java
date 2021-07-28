@@ -3,7 +3,6 @@ package org.med.alarm;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.Date;
 import java.util.List;
 import java.util.Random;
 
@@ -28,9 +27,9 @@ public class AlarmRepository {
     public Runnable writeSnapshot() {
 
         return () -> {
-            // temporary solution
-            // TODO: replace with XML writer
-            AlarmsJSON.writer("alarms_cache.json", alarms);
+            Alarms wrappedAlarms = new Alarms();
+            wrappedAlarms.setAlarms(alarms);
+            AlarmXML.writer("alarms_cache.xml", wrappedAlarms);
             logger.debug("writeSnapshot method called");
         };
     }
