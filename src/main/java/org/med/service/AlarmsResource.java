@@ -1,6 +1,8 @@
 package org.med.service;
 
 
+import io.swagger.annotations.Api;
+import jakarta.inject.Inject;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.PathParam;
@@ -13,10 +15,12 @@ import java.util.List;
 
 
 @Path("/alarms")
-
+@Api(value = "Alarms Service")
 public class AlarmsResource {
 
-    private AlarmRepository alarms = new AlarmRepository();
+    @Inject
+    private AlarmRepository alarms;
+//    private AlarmRepository alarms = new AlarmRepository();
 
     @GET
     @Path("/hello")

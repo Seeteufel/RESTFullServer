@@ -1,11 +1,13 @@
 package org.med.alarm;
 
+import jakarta.enterprise.context.ApplicationScoped;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.List;
 import java.util.Random;
 
+@ApplicationScoped
 public class AlarmRepository {
 
     private static final Logger logger = LoggerFactory.getLogger(AlarmGenerator.class);
